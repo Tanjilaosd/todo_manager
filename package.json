@@ -5,8 +5,8 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-  "dev": "node --env-file=.env --watch server.js"
-},
+    "dev": "node --env-file=.env --watch server.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -17,8 +17,9 @@
       "onFail": "download"
     }
   },
-  "type": "module",
   "dependencies": {
-    "express": "^5.2.1"
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongoose": "^9.7.4"
   }
 }
