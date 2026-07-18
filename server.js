@@ -13,12 +13,14 @@ import { env } from "./src/config/env.js";
 
 
 
+
 const port = env.PORT
 
-const PORT = port || 3001;
+const PORT1 = port || 3001;
 app.use(express.json())
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+
+app.listen(PORT1, () => {
+  console.log(`Server running on http://localhost:${PORT1}`);
   connectDB()
 });
