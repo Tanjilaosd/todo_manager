@@ -1,10 +1,10 @@
 import { z } from "zod";
-import { register } from "./../controllers/authController";
-import { validation } from "./../../../shared/constant";
+import { register } from "./../controllers/authController.js";
+import { validation } from "./../../../shared/constant.js";
 
 export const registerSchema = z.object({
   body: z.object({
-    name: z.string
+    name: z.string()
       .trim()
       .min(1, "Name is required")
       .max(50, "Name cannot exceed 50 characters"),

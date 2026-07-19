@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import { validation } from '../../../shared/constant'
+import { validation } from '../../../shared/constant.js'
 const userSchema = new mongoose.Schema({
     name: {
         type: String,

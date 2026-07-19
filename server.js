@@ -17,7 +17,13 @@ import { env } from "./src/config/env.js";
 const port = env.PORT
 
 const PORT1 = port || 3001;
+
+
 app.use(express.json())
+
+app.get ('/',(req,res) =>{
+  res.send("Hellow world")
+})
 
 
 app.listen(PORT1, () => {
