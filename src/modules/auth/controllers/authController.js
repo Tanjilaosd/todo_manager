@@ -6,10 +6,10 @@ import { asyncHandler } from "../utila/asynchandler.js";
 const authServes = createAuthService();
 
 export const register = asyncHandler(async (req, res) => {
-  const { user } = await authServes.register(req.body);
+  const { user,accessToken } = await authServes.register(req.body);
 
   res.status(http_status.CREATED).json({
-    user,
+    user,accessToken,
     message: "User registered successfully",
   });
 });
