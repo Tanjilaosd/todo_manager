@@ -28,4 +28,16 @@ const userSchema = new mongoose.Schema({
     versionKey:false
 })
 
+userSchema.pre("save",async function () {
+    if(!this.isModified('password')) return
+    console.log(validation.bcrypt_salt_roundes)
+    try {
+        this.password = await bcrypt.hash(this.password,validation.bcrypt_salt_roundes)
+
+    } catch (error) {
+        console.error(error)
+        
+    }
+})
+
 export const User = mongoose.models.User || mongoose.model("User",userSchema)

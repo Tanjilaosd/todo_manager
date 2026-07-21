@@ -4,8 +4,9 @@ export const createAuthService = (
   userRepository = createAuthRepository()
 ) => {
   const generateTokenPair = async (userId) => {
-    const accessToken = generateTokenPair(userId)
-    return {accessToken}
+    const accessToken = generateAccessToken(userId)
+    const refreshToken = generateRefreshToken(userId)
+    return {accessToken,refreshToken}
   }
   return {
     register: async ({ email, name, password }) => {
