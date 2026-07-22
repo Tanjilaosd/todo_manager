@@ -22,5 +22,8 @@ export const createAuthService = (
         ...token
       };
     },
+    login:async ({email,password}) => {
+      const user = await userRepository.findByEmail(email)
+    }
   };
 };

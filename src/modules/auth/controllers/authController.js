@@ -13,3 +13,5 @@ export const register = asyncHandler(async (req, res) => {
     message: "User registered successfully",
   });
 });
+
+
