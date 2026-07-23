@@ -24,6 +24,16 @@ export const createAuthService = (
     },
     login:async ({email,password}) => {
       const user = await userRepository.findByEmail(email)
+      const isMatch = await bcrypt.compare(password,user.password)
+    if(!isMatch){
+     console.error("invalid email or password")
+    }
+    const {password : _, ...userwithOutPassword} = user
+    const tokens = await generateTokenPair(user._id)
+    return{
+      user:userwithOutPassword,
+      ...tokens
+    }
     }
   };
 };
