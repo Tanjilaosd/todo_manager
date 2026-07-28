@@ -26,13 +26,7 @@ const todoSchema = new mongoose.Schema({
         default:todo_status.active
    
     },
-    user:{
-        type: mongoose.Schema.Types.ObjectId,
-        required:true,
-        ref:"User"
-    }
-
-
+    
 },{
     timestamps:true,
     versionKey:false,
